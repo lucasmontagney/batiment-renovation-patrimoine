@@ -7,7 +7,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { Dictionary, Locale } from '@/lib/i18n'
 import { altLocale } from '@/lib/i18n'
-import { HERO_IMAGE, getProjectFirstPhoto, categories } from '@/lib/projects'
+import { HERO_IMAGE, getCategoryFirstPhoto, categories } from '@/lib/projects'
 
 type Props = {
   locale: Locale
@@ -48,17 +48,17 @@ export default function Navigation({ locale, dict }: Props) {
       {
         href: `/${locale}/realisations`,
         label: dict.nav.realisations,
-        img: getProjectFirstPhoto(categories[0].projects[1]),
+        img: getCategoryFirstPhoto(categories[0]),
       },
       {
         href: `/${locale}/savoir-faire`,
         label: dict.nav.savoirFaire,
-        img: getProjectFirstPhoto(categories[1].projects[0]),
+        img: getCategoryFirstPhoto(categories[1]),
       },
       {
         href: `/${locale}/atelier`,
         label: dict.nav.atelier,
-        img: getProjectFirstPhoto(categories[2].projects[0]),
+        img: getCategoryFirstPhoto(categories[2]),
       },
       {
         href: `/${locale}/contact`,

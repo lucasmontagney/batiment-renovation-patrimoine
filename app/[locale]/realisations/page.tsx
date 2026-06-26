@@ -2,9 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import FadeIn from '@/components/FadeIn'
 import PageHero from '@/components/PageHero'
-import CompareSlider from '@/components/CompareSlider'
 import { getDict, isLocale, type Locale } from '@/lib/i18n'
-import { categories, getProjectPhotoSrc } from '@/lib/projects'
+import { categories, getCategoryPhotoSrc } from '@/lib/projects'
 
 type Params = { params: { locale: string } }
 
@@ -19,7 +18,7 @@ export default function RealisationsPage({ params }: Params) {
         eyebrow={t.eyebrow}
         title={t.title}
         subtitle={t.subtitle}
-        imageSrc="/images/projets/calades/calade-2/IMG-20201118-WA0018.jpg"
+        imageSrc="/images/projets/terrasses/IMG_6421.jpg"
         imageAlt={t.title}
       />
 
@@ -38,65 +37,30 @@ export default function RealisationsPage({ params }: Params) {
         </div>
       </section>
 
-      {categories.map((cat) => (
-        <section key={cat.slug} id={cat.slug} className="section-padding scroll-mt-32">
-          <div className="container-wide">
-            <FadeIn className="mb-16 md:mb-20">
-              <p className="eyebrow mb-5">{t.eyebrow}</p>
-              <h2 className="font-display text-display-lg text-ink font-light max-w-3xl leading-tight">
-                {cat.name[locale]}
-              </h2>
-              <p className="font-sans text-[12px] text-dust/70 uppercase tracking-widest mt-4">
-                {cat.projects.length} {cat.projects.length > 1 ? t.projectPlural : t.projectSingular}
-              </p>
-            </FadeIn>
+      {categories.map((cat) => {
+        const photos = cat.photos.map((f) => ({
+          src: getCategoryPhotoSrc(cat, f),
+          alt: cat.name[locale],
+        }))
 
-            <div className="space-y-24 md:space-y-32">
-              {cat.projects.map((p, idx) => {
-                const photos = p.photos.map((f) => ({
-                  src: getProjectPhotoSrc(p, f),
-                  alt: p.title[locale],
-                }))
+        return (
+          <section key={cat.slug} id={cat.slug} className="section-padding scroll-mt-32">
+            <div className="container-wide">
+              <FadeIn className="mb-16 md:mb-20">
+                <p className="eyebrow mb-5">{t.eyebrow}</p>
+                <h2 className="font-display text-display-lg text-ink font-light max-w-3xl leading-tight">
+                  {cat.name[locale]}
+                </h2>
+                <p className="font-sans text-[12px] text-dust/70 uppercase tracking-widest mt-4">
+                  {photos.length} {photos.length > 1 ? t.photoPlural : t.photoSingular}
+                </p>
+              </FadeIn>
 
-                return (
-                  <article key={p.slug}>
-                    <FadeIn className="mb-8 flex items-baseline justify-between gap-6 flex-wrap">
-                      <div>
-                        <p className="font-sans text-[11px] text-dust/70 uppercase tracking-widest mb-2">
-                          {String(idx + 1).padStart(2, '0')} / {String(cat.projects.length).padStart(2, '0')}
-                        </p>
-                        <h3 className="font-display text-display-md text-ink font-light leading-tight">
-                          {p.title[locale]}
-                        </h3>
-                      </div>
-                      {p.location && (
-                        <p className="font-sans text-[11px] text-dust uppercase tracking-widest">
-                          {p.location[locale]}
-                        </p>
-                      )}
-                    </FadeIn>
-
-                    {p.beforeAfter && (
-                      <FadeIn className="mb-8">
-                        <CompareSlider
-                          beforeSrc={getProjectPhotoSrc(p, p.beforeAfter.before)}
-                          afterSrc={getProjectPhotoSrc(p, p.beforeAfter.after)}
-                          beforeAlt={`${p.title[locale]} — ${t.before}`}
-                          afterAlt={`${p.title[locale]} — ${t.after}`}
-                          beforeLabel={t.before}
-                          afterLabel={t.after}
-                        />
-                      </FadeIn>
-                    )}
-
-                    <PhotoGrid photos={photos} />
-                  </article>
-                )
-              })}
+              <PhotoGrid photos={photos} />
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        )
+      })}
 
       <section className="section-padding bg-olive-deep">
         <div className="container-main max-w-2xl mx-auto text-center">
@@ -120,6 +84,7 @@ export default function RealisationsPage({ params }: Params) {
 
 function PhotoGrid({ photos }: { photos: { src: string; alt: string }[] }) {
   const n = photos.length
+  if (n === 0) return null
   if (n === 1) {
     return (
       <FadeIn className="relative aspect-[16/10] overflow-hidden">

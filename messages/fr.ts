@@ -68,7 +68,7 @@ export const fr = {
     subtitle:
       'Une sélection de chantiers — chacun porteur d\'une histoire, d\'une contrainte, d\'une solution artisanale.',
     categoriesEyebrow: 'Nos domaines d\'intervention',
-    categoriesTitle: 'Six disciplines, une même exigence.',
+    categoriesTitle: 'Sept disciplines, une même exigence.',
     projectSingular: 'chantier',
     projectPlural: 'chantiers',
     photoSingular: 'photo',

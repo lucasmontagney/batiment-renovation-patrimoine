@@ -16,7 +16,7 @@ export default function SavoirFairePage({ params }: Params) {
         eyebrow={t.eyebrow}
         title={t.title}
         subtitle={t.subtitle}
-        imageSrc="/images/projets/maconnerie-pierre/pierre-6/IMG_20191219_153225.jpg"
+        imageSrc="/images/projets/terrasses/IMG_6425.jpg"
         imageAlt={t.title}
       />
 

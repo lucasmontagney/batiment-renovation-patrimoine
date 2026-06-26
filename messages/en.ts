@@ -68,7 +68,7 @@ export const en = {
     subtitle:
       'A selection of projects — each carries a story, a constraint, a craft solution.',
     categoriesEyebrow: 'Our disciplines',
-    categoriesTitle: 'Six disciplines, one standard.',
+    categoriesTitle: 'Seven disciplines, one standard.',
     projectSingular: 'project',
     projectPlural: 'projects',
     photoSingular: 'photo',

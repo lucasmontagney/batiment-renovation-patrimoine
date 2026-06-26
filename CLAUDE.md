@@ -43,22 +43,23 @@ Structure dans `public/images/` (kebab-case ASCII, auto-discovery via manifest) 
 - `public/images/brand/` — logo, favicon, OG.
 - `public/images/equipe/` — portraits (à venir).
 
+Modèle : **une catégorie = une galerie**. Toutes les photos d'une catégorie vont directement dans son dossier (pas de sous-dossiers par chantier).
+
 Catégories actuelles :
 
-- `calades/calade-1..6/`
-- `construction/chantier-1/` (à découper en chantiers individuels)
-- `enduits-chaux/facade-1..6/`
-- `maconnerie-pierre/pierre-1..7/`
-- `salles-de-bain/sdb-1..4/`
-- `terrasses/chantier-1/` (à découper en chantiers individuels)
+- `calades/`
+- `construction/`
+- `enduits-chaux/`
+- `escalier/`
+- `salles-de-bain/`
+- `terrasses/`
+- `toits/`
 
 ### Workflow ajout de photos
 
-Pour ajouter une photo : la déposer dans le bon sous-dossier — c'est tout. Le script `scripts/build-photos-manifest.js` régénère automatiquement `lib/photos-manifest.json` à chaque `npm run dev` ou `npm run build` (hooks `predev` / `prebuild`). En local on peut aussi forcer : `npm run sync-photos`.
+Pour ajouter une photo : la déposer dans le dossier de la catégorie — c'est tout. Le script `scripts/build-photos-manifest.js` régénère automatiquement `lib/photos-manifest.json` à chaque `npm run dev` ou `npm run build` (hooks `predev` / `prebuild`). En local on peut aussi forcer : `npm run sync-photos`.
 
-Pour ajouter un nouveau chantier dans une catégorie : créer un dossier `<categorie>/<slug-chantier>/`, déposer les photos dedans, puis ajouter l'entrée dans `categoriesInput` de `lib/projects.ts` (titre, lieu) — le tableau `photos` est dérivé automatiquement.
-
-Avant/après dispo pour certains chantiers — composant slider compare prévu.
+Pour ajouter une nouvelle catégorie : créer un dossier `public/images/projets/<slug>/`, déposer les photos, puis ajouter l'entrée dans `categoriesInput` de `lib/projects.ts` (slug, name FR/EN, folder) — le tableau `photos` est dérivé automatiquement.
 
 ## Coordonnées
 
