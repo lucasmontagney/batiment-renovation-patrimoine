@@ -36,17 +36,27 @@ Pas de blog v1. Pas de mentions légales v1.
 
 ## Photos
 
-Catégorie de maçonnerie → sous-dossier par chantier dans `public/assets/images/<catégorie>/<Chantier N>/` :
+Structure dans `public/images/` (kebab-case ASCII, auto-discovery via manifest) :
 
-- `Calades de galets/Calade 1..6/`
-- `Construction, sur-élévation/` — sous-dossiers chantier à créer.
-- `Enduits à la chaux, facades/Façade 1..6/`
-- `Maçonnerie de pierre/Pierre 1..7/`
-- `salles de bains/Salle de bain 1..4/`
-- `Terrasses, plage de piscine/` — sous-dossiers chantier à créer.
-- `hero/` — photos hero (escalier).
-- `brand/` — logo, favicon, OG.
-- `equipe/` — portraits (à venir).
+- `public/images/projets/<categorie>/<chantier>/<photo.jpg>` — convention par chantier.
+- `public/images/hero/` — photos hero (escalier).
+- `public/images/brand/` — logo, favicon, OG.
+- `public/images/equipe/` — portraits (à venir).
+
+Catégories actuelles :
+
+- `calades/calade-1..6/`
+- `construction/chantier-1/` (à découper en chantiers individuels)
+- `enduits-chaux/facade-1..6/`
+- `maconnerie-pierre/pierre-1..7/`
+- `salles-de-bain/sdb-1..4/`
+- `terrasses/chantier-1/` (à découper en chantiers individuels)
+
+### Workflow ajout de photos
+
+Pour ajouter une photo : la déposer dans le bon sous-dossier — c'est tout. Le script `scripts/build-photos-manifest.js` régénère automatiquement `lib/photos-manifest.json` à chaque `npm run dev` ou `npm run build` (hooks `predev` / `prebuild`). En local on peut aussi forcer : `npm run sync-photos`.
+
+Pour ajouter un nouveau chantier dans une catégorie : créer un dossier `<categorie>/<slug-chantier>/`, déposer les photos dedans, puis ajouter l'entrée dans `categoriesInput` de `lib/projects.ts` (titre, lieu) — le tableau `photos` est dérivé automatiquement.
 
 Avant/après dispo pour certains chantiers — composant slider compare prévu.
 

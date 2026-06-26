@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "sync-photos": "node scripts/build-photos-manifest.js",
+    "predev": "node scripts/build-photos-manifest.js",
+    "prebuild": "node scripts/build-photos-manifest.js",
     "dev": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next dev",
     "build": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next build",
     "start": "next start",

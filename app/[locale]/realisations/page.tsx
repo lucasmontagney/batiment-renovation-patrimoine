@@ -19,7 +19,7 @@ export default function RealisationsPage({ params }: Params) {
         eyebrow={t.eyebrow}
         title={t.title}
         subtitle={t.subtitle}
-        imageSrc="/assets/images/Calades de galets/Calade 2/IMG-20201118-WA0018.jpg"
+        imageSrc="/images/projets/calades/calade-2/IMG-20201118-WA0018.jpg"
         imageAlt={t.title}
       />
 

@@ -15,7 +15,7 @@ export default function AtelierPage({ params }: Params) {
         eyebrow={t.eyebrow}
         title={t.title}
         subtitle={t.subtitle}
-        imageSrc="/assets/images/Enduits à la chaux, facades/Façade 2/IMG-20211217-WA0001.jpg"
+        imageSrc="/images/projets/enduits-chaux/facade-2/IMG-20211217-WA0001.jpg"
         imageAlt={t.title}
       />
 
