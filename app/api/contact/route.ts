@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
       .join('\n')
 
     const apiKey = process.env.RESEND_API_KEY
-    const fromEmail = process.env.CONTACT_FROM_EMAIL // e.g. "Site BRP <site@batiment-renovation-patrimoine.fr>"
+    const fromEmail = process.env.CONTACT_FROM_EMAIL // e.g. "Site BRP <site@batiment-renovation-patrimoine.com>"
 
     if (apiKey && fromEmail) {
       const attachments = await Promise.all(

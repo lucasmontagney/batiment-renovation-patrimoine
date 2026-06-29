@@ -78,7 +78,7 @@ Pour les deux dossiers, la première photo en ordre alphabétique est prise. Pou
 - **Téléphone** : 06 98 03 79 60.
 - **Email** : d.montagney@gmail.com (public + destination formulaire).
 - **Instagram** : [@davidmontagney](https://www.instagram.com/davidmontagney/).
-- **Domaine** : https://batiment-renovation-patrimoine.fr/.
+- **Domaine** : https://batiment-renovation-patrimoine.com/.
 
 ## Équipe
 

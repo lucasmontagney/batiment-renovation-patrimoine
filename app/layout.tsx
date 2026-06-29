@@ -18,7 +18,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://batiment-renovation-patrimoine.fr'),
+  metadataBase: new URL('https://batiment-renovation-patrimoine.com'),
   title: {
     template: '%s · Bâtiment Rénovation Patrimoine',
     default: "Bâtiment Rénovation Patrimoine — Maçonnerie d'art, Pézenas",

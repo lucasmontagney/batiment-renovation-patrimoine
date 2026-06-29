@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://batiment-renovation-patrimoine.fr/sitemap.xml',
+    sitemap: 'https://batiment-renovation-patrimoine.com/sitemap.xml',
   }
 }
