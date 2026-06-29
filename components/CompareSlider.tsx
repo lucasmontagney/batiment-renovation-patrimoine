@@ -50,7 +50,7 @@ export default function CompareSlider({
   return (
     <div
       ref={ref}
-      className="relative w-full aspect-[16/11] overflow-hidden select-none cursor-ew-resize bg-pierre/20"
+      className="relative w-full aspect-[3/2] overflow-hidden select-none cursor-ew-resize bg-pierre/20"
       onPointerDown={(e) => {
         dragging.current = true
         move(e.clientX)

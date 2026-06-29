@@ -49,7 +49,7 @@ export default function RealisationsPage({ params }: Params) {
         const sliderFirst = catIdx % 2 === 0
 
         const sliderBlock = cat.beforeAfter && (
-          <FadeIn className="mb-16">
+          <FadeIn className="mb-16 max-w-4xl mx-auto">
             <CompareSlider
               beforeSrc={cat.beforeAfter.beforeSrc}
               afterSrc={cat.beforeAfter.afterSrc}
@@ -66,27 +66,29 @@ export default function RealisationsPage({ params }: Params) {
         return (
           <section key={cat.slug} id={cat.slug} className="section-padding scroll-mt-32">
             <div className="container-wide">
-              <FadeIn className="mb-16 md:mb-20">
-                <p className="eyebrow mb-5">{t.eyebrow}</p>
-                <h2 className="font-display text-display-lg text-ink font-light max-w-3xl leading-tight">
-                  {cat.name[locale]}
-                </h2>
-                <p className="font-sans text-[12px] text-dust/70 uppercase tracking-widest mt-4">
-                  {photos.length} {photos.length > 1 ? t.photoPlural : t.photoSingular}
-                </p>
-              </FadeIn>
+              <div className="max-w-5xl mx-auto">
+                <FadeIn className="mb-16 md:mb-20">
+                  <p className="eyebrow mb-5">{t.eyebrow}</p>
+                  <h2 className="font-display text-display-lg text-ink font-light max-w-3xl leading-tight">
+                    {cat.name[locale]}
+                  </h2>
+                  <p className="font-sans text-[12px] text-dust/70 uppercase tracking-widest mt-4">
+                    {photos.length} {photos.length > 1 ? t.photoPlural : t.photoSingular}
+                  </p>
+                </FadeIn>
 
-              {sliderFirst ? (
-                <>
-                  {sliderBlock}
-                  {galleryBlock}
-                </>
-              ) : (
-                <>
-                  {galleryBlock}
-                  {sliderBlock && <div className="mt-16">{sliderBlock}</div>}
-                </>
-              )}
+                {sliderFirst ? (
+                  <>
+                    {sliderBlock}
+                    {galleryBlock}
+                  </>
+                ) : (
+                  <>
+                    {galleryBlock}
+                    {sliderBlock && <div className="mt-16">{sliderBlock}</div>}
+                  </>
+                )}
+              </div>
             </div>
           </section>
         )
@@ -117,8 +119,8 @@ function PhotoGrid({ photos }: { photos: { src: string; alt: string }[] }) {
   if (n === 0) return null
   if (n === 1) {
     return (
-      <FadeIn className="relative aspect-[16/10] overflow-hidden">
-        <Image src={photos[0].src} alt={photos[0].alt} fill className="object-cover" sizes="100vw" />
+      <FadeIn className="relative aspect-[3/2] overflow-hidden max-w-3xl mx-auto">
+        <Image src={photos[0].src} alt={photos[0].alt} fill className="object-cover" sizes="(min-width: 768px) 768px, 100vw" />
       </FadeIn>
     )
   }
