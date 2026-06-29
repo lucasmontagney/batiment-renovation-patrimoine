@@ -26,9 +26,8 @@ Site vitrine premium pour un atelier de maçonnerie d'art et restauration du pat
 
 ## Pages
 
-- `/` — accueil : hero plein écran escalier, intro atelier, piliers savoir-faire, featured chantier, citation, CTA.
-- `/realisations` — galerie chantiers par catégorie (visuel prime, peu de texte).
-- `/savoir-faire` — techniques (pierre, chaux, terrasses, sdb, couverture, etc.).
+- `/` — accueil : hero plein écran, intro atelier, piliers, featured chantier, citation, CTA.
+- `/realisations` — galerie par catégorie + avant/après par catégorie (si dispo).
 - `/atelier` — histoire, valeurs, équipe (portraits + nom + rôle), partenaires/formations.
 - `/contact` — formulaire (nom/email/tél/projet/commune/budget/upload photos) + coordonnées.
 
@@ -38,28 +37,40 @@ Pas de blog v1. Pas de mentions légales v1.
 
 Structure dans `public/images/` (kebab-case ASCII, auto-discovery via manifest) :
 
-- `public/images/projets/<categorie>/<chantier>/<photo.jpg>` — convention par chantier.
-- `public/images/hero/` — photos hero (escalier).
+- `public/images/projets/<categorie>/` — galerie de la catégorie (photos directement à la racine).
+- `public/images/projets/<categorie>/avant après/` — couple de photos avant/après pour la catégorie (optionnel, voir plus bas).
+- `public/images/home/hero/` — photo(s) du hero d'accueil (la première alphabétique est utilisée).
+- `public/images/home/featured/` — photo(s) de la section "Réalisation mise en avant" sur l'accueil.
+- `public/images/hero/` — fallback hero historique (`escalier.jpeg`).
 - `public/images/brand/` — logo, favicon, OG.
 - `public/images/equipe/` — portraits (à venir).
 
 Modèle : **une catégorie = une galerie**. Toutes les photos d'une catégorie vont directement dans son dossier (pas de sous-dossiers par chantier).
 
-Catégories actuelles :
-
-- `calades/`
-- `construction/`
-- `enduits-chaux/`
-- `escalier/`
-- `salles-de-bain/`
-- `terrasses/`
-- `toits/`
+Catégories actuelles : `calades/`, `construction/`, `enduits-chaux/`, `escalier/`, `salles-de-bain/`, `terrasses/`, `toits/`.
 
 ### Workflow ajout de photos
 
-Pour ajouter une photo : la déposer dans le dossier de la catégorie — c'est tout. Le script `scripts/build-photos-manifest.js` régénère automatiquement `lib/photos-manifest.json` à chaque `npm run dev` ou `npm run build` (hooks `predev` / `prebuild`). En local on peut aussi forcer : `npm run sync-photos`.
+Pour ajouter une photo de galerie : la déposer dans le dossier de la catégorie — c'est tout. Le script `scripts/build-photos-manifest.js` régénère `lib/photos-manifest.json` à chaque `npm run dev` ou `npm run build` (hooks `predev` / `prebuild`). En local on peut aussi forcer : `npm run sync-photos`.
 
-Pour ajouter une nouvelle catégorie : créer un dossier `public/images/projets/<slug>/`, déposer les photos, puis ajouter l'entrée dans `categoriesInput` de `lib/projects.ts` (slug, name FR/EN, folder) — le tableau `photos` est dérivé automatiquement.
+Pour ajouter une nouvelle catégorie : créer `public/images/projets/<slug>/`, déposer les photos, puis ajouter l'entrée dans `categoriesInput` de `lib/projects.ts` (slug, name FR/EN, folder).
+
+### Avant/après par catégorie
+
+Convention : dans une catégorie, créer un sous-dossier `avant après/` et y déposer exactement 2 photos. Le composant `CompareSlider` est rendu automatiquement dans la page Réalisations pour cette catégorie.
+
+Pour contrôler l'ordre :
+- Soit nommer les fichiers `avant.jpg` et `apres.jpg` (la détection se fait sur le nom — `avant`, `apres`, `après`, `before`, `after`).
+- Soit laisser des noms arbitraires : l'ordre alphabétique décide (premier = avant, second = après).
+
+L'emplacement du slider alterne automatiquement d'une catégorie à l'autre (au-dessus de la galerie / en dessous).
+
+### Photos d'accueil
+
+- `public/images/home/hero/` : déposer une photo plein écran pour le hero de l'accueil (parallaxe). Si le dossier est vide, l'ancien `hero/escalier.jpeg` est utilisé en fallback.
+- `public/images/home/featured/` : déposer une photo verticale (ratio 4:5 idéal) pour la section "Réalisation mise en avant" sur l'accueil. Si vide, une photo enduits-chaux est utilisée par défaut.
+
+Pour les deux dossiers, la première photo en ordre alphabétique est prise. Pour changer la photo, renommer ou remplacer le fichier.
 
 ## Coordonnées
 

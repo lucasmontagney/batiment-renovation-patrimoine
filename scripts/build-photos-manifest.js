@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const ROOT = path.join(__dirname, '..', 'public', 'images', 'projets')
+const ROOT = path.join(__dirname, '..', 'public', 'images')
 const OUTPUT = path.join(__dirname, '..', 'lib', 'photos-manifest.json')
 
 const IMAGE_EXT = /\.(jpe?g|png|webp)$/i

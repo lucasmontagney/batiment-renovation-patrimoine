@@ -2,7 +2,6 @@ export const en = {
   nav: {
     home: 'Home',
     realisations: 'Projects',
-    savoirFaire: 'Craft',
     atelier: 'Workshop',
     contact: 'Contact',
     menu: 'Menu',
@@ -79,54 +78,6 @@ export const en = {
     ctaTitle: 'Your project will be our next commitment.',
     ctaBody:
       'We study every request with care. Get in touch to present your project — we will reply quickly.',
-  },
-  savoirFaire: {
-    eyebrow: 'Craft',
-    title: 'Six techniques. One artisanal standard.',
-    subtitle:
-      'Mastery of inherited gestures applied to contemporary projects. Each technique is chosen for what it brings to the building — not for performance.',
-    techniques: [
-      {
-        num: '01',
-        title: 'Stone masonry',
-        text:
-          'Load-bearing walls, retaining walls, exposed stone façades. Dry-stone or lime-bound, identical restitution of original facing.',
-      },
-      {
-        num: '02',
-        title: 'Lime renders',
-        text:
-          'Air or hydraulic lime depending on substrate. Smoothed, scraped, or roughcast finishes. Restoration of old façades respecting local tones.',
-      },
-      {
-        num: '03',
-        title: 'Vaults and stairs',
-        text:
-          'Barrel vaults, Catalan vaults, stone staircases. Restoration of vaulted interiors in old Languedoc homes.',
-      },
-      {
-        num: '04',
-        title: 'Pebble pavings',
-        text:
-          'Indoor and outdoor pavings in river pebbles. Traditional patterns, medallions, borders. An ancestral Mediterranean technique.',
-      },
-      {
-        num: '05',
-        title: 'Terraces and pool decks',
-        text:
-          'Travertine, limestone, Tropezian terraces. Traditional sealed laying, lime joints. For the great southern light.',
-      },
-      {
-        num: '06',
-        title: 'Bathrooms and interior fittings',
-        text:
-          'Stone bathrooms, Italian showers in travertine, bespoke interior fittings. Heritage in everyday life.',
-      },
-    ],
-    seoEyebrow: 'Also',
-    seoTitle: 'Hempcrete, roofing, additions.',
-    seoBody:
-      'Beyond heritage disciplines, we also support sustainable construction projects — hempcrete / lime-hemp, roofing, additions. Get in touch to discuss your specific need.',
   },
   atelier: {
     eyebrow: 'The Workshop',

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import FadeIn from '@/components/FadeIn'
 import PageHero from '@/components/PageHero'
+import CompareSlider from '@/components/CompareSlider'
 import { getDict, isLocale, type Locale } from '@/lib/i18n'
 import { categories, getCategoryPhotoSrc } from '@/lib/projects'
 
@@ -18,7 +19,7 @@ export default function RealisationsPage({ params }: Params) {
         eyebrow={t.eyebrow}
         title={t.title}
         subtitle={t.subtitle}
-        imageSrc="/images/projets/terrasses/IMG_6421.jpg"
+        imageSrc="/images/projets/terrasses/5482051157561966893.jpg"
         imageAlt={t.title}
       />
 
@@ -37,11 +38,30 @@ export default function RealisationsPage({ params }: Params) {
         </div>
       </section>
 
-      {categories.map((cat) => {
+      {categories.map((cat, catIdx) => {
         const photos = cat.photos.map((f) => ({
           src: getCategoryPhotoSrc(cat, f),
           alt: cat.name[locale],
         }))
+
+        // Alternate: even-indexed categories show the before/after slider FIRST,
+        // odd-indexed show the gallery first then the slider underneath.
+        const sliderFirst = catIdx % 2 === 0
+
+        const sliderBlock = cat.beforeAfter && (
+          <FadeIn className="mb-16">
+            <CompareSlider
+              beforeSrc={cat.beforeAfter.beforeSrc}
+              afterSrc={cat.beforeAfter.afterSrc}
+              beforeAlt={`${cat.name[locale]} — ${t.before}`}
+              afterAlt={`${cat.name[locale]} — ${t.after}`}
+              beforeLabel={t.before}
+              afterLabel={t.after}
+            />
+          </FadeIn>
+        )
+
+        const galleryBlock = photos.length > 0 && <PhotoGrid photos={photos} />
 
         return (
           <section key={cat.slug} id={cat.slug} className="section-padding scroll-mt-32">
@@ -56,7 +76,17 @@ export default function RealisationsPage({ params }: Params) {
                 </p>
               </FadeIn>
 
-              <PhotoGrid photos={photos} />
+              {sliderFirst ? (
+                <>
+                  {sliderBlock}
+                  {galleryBlock}
+                </>
+              ) : (
+                <>
+                  {galleryBlock}
+                  {sliderBlock && <div className="mt-16">{sliderBlock}</div>}
+                </>
+              )}
             </div>
           </section>
         )

@@ -79,11 +79,6 @@ export default function HomePage({ params }: Params) {
               </FadeIn>
             ))}
           </div>
-          <FadeIn delay={0.2} className="mt-16">
-            <Link href={`/${locale}/savoir-faire`} className="btn-ghost-dark">
-              {dict.nav.savoirFaire}
-            </Link>
-          </FadeIn>
         </div>
       </section>
 

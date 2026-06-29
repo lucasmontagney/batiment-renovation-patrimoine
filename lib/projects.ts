@@ -1,7 +1,13 @@
 import type { Locale } from './i18n'
 import manifest from './photos-manifest.json'
 
-const IMG_BASE = '/images/projets'
+const IMG_BASE = '/images'
+const BEFORE_AFTER_SUBFOLDER = 'avant après'
+
+export type BeforeAfter = {
+  beforeSrc: string
+  afterSrc: string
+}
 
 export type Category = {
   slug: string
@@ -9,16 +15,45 @@ export type Category = {
   folder: string
   description?: Record<Locale, string>
   photos: string[]
+  beforeAfter?: BeforeAfter
 }
 
-type CategoryInput = Omit<Category, 'photos'> & { photos?: string[] }
+type CategoryInput = {
+  slug: string
+  name: Record<Locale, string>
+  folder: string
+  description?: Record<Locale, string>
+}
 
 const photosByFolder = manifest as Record<string, string[]>
 
-function attachPhotos(input: CategoryInput): Category {
+function detectBeforeAfter(folderKey: string): BeforeAfter | undefined {
+  const files = photosByFolder[folderKey]
+  if (!files || files.length < 2) return undefined
+
+  const lower = (s: string) => s.toLowerCase()
+  const beforeIdx = files.findIndex((f) => /\b(avant|before)\b/i.test(f) || lower(f).startsWith('avant') || lower(f).startsWith('before'))
+  const afterIdx = files.findIndex((f) => /\b(apres|après|after)\b/i.test(f) || lower(f).startsWith('apres') || lower(f).startsWith('après') || lower(f).startsWith('after'))
+
+  const folder = folderKey
+  if (beforeIdx !== -1 && afterIdx !== -1) {
+    return {
+      beforeSrc: `${IMG_BASE}/${folder}/${files[beforeIdx]}`,
+      afterSrc: `${IMG_BASE}/${folder}/${files[afterIdx]}`,
+    }
+  }
+  return {
+    beforeSrc: `${IMG_BASE}/${folder}/${files[0]}`,
+    afterSrc: `${IMG_BASE}/${folder}/${files[1]}`,
+  }
+}
+
+function attachCategory(input: CategoryInput): Category {
+  const projectKey = `projets/${input.folder}`
   return {
     ...input,
-    photos: input.photos ?? photosByFolder[input.folder] ?? [],
+    photos: photosByFolder[projectKey] ?? [],
+    beforeAfter: detectBeforeAfter(`${projectKey}/${BEFORE_AFTER_SUBFOLDER}`),
   }
 }
 
@@ -60,24 +95,33 @@ const categoriesInput: CategoryInput[] = [
   },
 ]
 
-export const categories: Category[] = categoriesInput.map(attachPhotos)
+export const categories: Category[] = categoriesInput.map(attachCategory)
 
 export function getCategoryBySlug(slug: string): Category | undefined {
   return categories.find((c) => c.slug === slug)
 }
 
 export function getCategoryPhotoSrc(category: Category, fileName: string): string {
-  return `${IMG_BASE}/${category.folder}/${fileName}`
+  return `${IMG_BASE}/projets/${category.folder}/${fileName}`
 }
 
 export function getCategoryFirstPhoto(category: Category): string {
-  return `${IMG_BASE}/${category.folder}/${category.photos[0]}`
+  const first = category.photos[0]
+  if (first) return getCategoryPhotoSrc(category, first)
+  if (category.beforeAfter) return category.beforeAfter.afterSrc
+  return HERO_IMAGE
 }
 
-export const HERO_IMAGE = '/images/hero/escalier.jpeg'
+function firstFromFolder(folderKey: string, fallback: string): string {
+  const files = photosByFolder[folderKey]
+  if (!files || files.length === 0) return fallback
+  return `${IMG_BASE}/${folderKey}/${files[0]}`
+}
+
+export const HERO_IMAGE = firstFromFolder('home/hero', firstFromFolder('hero', '/images/hero/escalier.jpeg'))
 
 export const FEATURED_HOME_PROJECT = {
-  src: `${IMG_BASE}/enduits-chaux/WhatsApp Image 2026-06-25 at 16.45.53.jpeg`,
-  altFr: 'Façade restaurée à l\'enduit chaux — Pézenas',
-  altEn: 'Lime render restored façade — Pézenas',
+  src: firstFromFolder('home/featured', `${IMG_BASE}/projets/enduits-chaux/WhatsApp Image 2026-06-25 at 16.45.53.jpeg`),
+  altFr: 'Façade restaurée à l\'enduit chaux',
+  altEn: 'Lime render restored façade',
 }

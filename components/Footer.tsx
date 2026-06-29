@@ -9,7 +9,6 @@ type Props = {
 export default function Footer({ locale, dict }: Props) {
   const navLinks = [
     { href: `/${locale}/realisations`, label: dict.nav.realisations },
-    { href: `/${locale}/savoir-faire`, label: dict.nav.savoirFaire },
     { href: `/${locale}/atelier`, label: dict.nav.atelier },
     { href: `/${locale}/contact`, label: dict.nav.contact },
   ]

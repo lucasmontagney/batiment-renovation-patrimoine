@@ -2,7 +2,6 @@ export const fr = {
   nav: {
     home: 'Accueil',
     realisations: 'Réalisations',
-    savoirFaire: 'Savoir-faire',
     atelier: 'L\'Atelier',
     contact: 'Contact',
     menu: 'Menu',
@@ -25,7 +24,7 @@ export const fr = {
     title: ['Restaurer.', 'Préserver.', 'Transmettre.'],
     introEyebrow: 'L\'Atelier',
     introLead:
-      'Depuis des générations, l\'atelier Bâtiment Rénovation Patrimoine perpétue les savoir-faire de la maçonnerie traditionnelle en Occitanie.',
+      'Depuis de nombreuses années, David Montagney et son équipe perpétuent les savoir-faire de la maçonnerie traditionnelle en Occitanie.',
     introBody:
       'Chaque chantier est une rencontre avec l\'histoire — une pierre, une façade, une maison qui mérite d\'être préservée. Nous intervenons dans l\'Hérault pour redonner vie au bâti ancien avec le respect qu\'il mérite.',
     pillarsEyebrow: 'Savoir-faire',
@@ -50,10 +49,10 @@ export const fr = {
       },
     ],
     featuredEyebrow: 'Réalisation',
-    featuredKicker: 'Façade à la chaux — Pézenas',
+    featuredKicker: 'Façade à la chaux — Nézignan-l\'Évêque, Hérault',
     featuredTitle: 'Restauration d\'enduit traditionnel à la chaux',
     featuredText:
-      'Restitution à l\'identique d\'un enduit chaux sur une demeure ancienne. Respect des teintes d\'origine, finition talochée, intégration parfaite dans le tissu patrimonial.',
+      'Rénovation d\'un enduit chaux sur une demeure ancienne. Respect des teintes d\'origine, intégration parfaite dans le tissu patrimonial.',
     quote:
       'La pierre ne ment pas. Elle révèle le temps, la main qui l\'a posée, et le soin de celui qui la restaure.',
     quoteAuthor: 'David Montagney — Maçon du patrimoine',
@@ -79,54 +78,6 @@ export const fr = {
     ctaTitle: 'Votre chantier sera notre prochain engagement.',
     ctaBody:
       'Nous étudions chaque demande avec soin. Contactez-nous pour présenter votre projet — nous vous répondrons dans les meilleurs délais.',
-  },
-  savoirFaire: {
-    eyebrow: 'Savoir-faire',
-    title: 'Six techniques. Une exigence artisanale.',
-    subtitle:
-      'Une maîtrise des gestes hérités, appliquée à des chantiers contemporains. Chaque technique est choisie pour ce qu\'elle apporte au bâti — pas pour la performance.',
-    techniques: [
-      {
-        num: '01',
-        title: 'Maçonnerie de pierre',
-        text:
-          'Murs porteurs, murs de soutènement, façades pierre apparente. Pierre sèche ou hourdée à la chaux, restitution à l\'identique du parement d\'origine.',
-      },
-      {
-        num: '02',
-        title: 'Enduits à la chaux',
-        text:
-          'Chaux aérienne ou hydraulique selon le support. Finitions talochée, grattée, tyrolienne. Restauration de façades anciennes dans le respect des teintes locales.',
-      },
-      {
-        num: '03',
-        title: 'Voûtes et escaliers',
-        text:
-          'Voûtes en berceau, voûtes catalanes, escaliers en pierre. Restauration des intérieurs voûtés des maisons anciennes du Languedoc.',
-      },
-      {
-        num: '04',
-        title: 'Calades de galets',
-        text:
-          'Sols extérieurs et intérieurs en galets de rivière. Motifs traditionnels, médaillons, bordures. Une technique méditerranéenne ancestrale.',
-      },
-      {
-        num: '05',
-        title: 'Terrasses et plages de piscine',
-        text:
-          'Travertin, pierre calcaire, terrasses tropéziennes. Pose traditionnelle scellée, joints à la chaux. Pour la grande lumière du Sud.',
-      },
-      {
-        num: '06',
-        title: 'Salles de bain et agencement',
-        text:
-          'Salles de bain en pierre, douches à l\'italienne en travertin, agencement intérieur sur-mesure. Le patrimoine au quotidien.',
-      },
-    ],
-    seoEyebrow: 'Aussi',
-    seoTitle: 'Béton de chanvre, couverture, sur-élévation.',
-    seoBody:
-      'Au-delà des disciplines patrimoniales, nous accompagnons aussi les projets de construction respectueuse — béton de chanvre / chaux-chanvre, couverture, sur-élévation. Contactez-nous pour discuter de votre besoin spécifique.',
   },
   atelier: {
     eyebrow: 'L\'Atelier',

@@ -51,14 +51,9 @@ export default function Navigation({ locale, dict }: Props) {
         img: getCategoryFirstPhoto(categories[0]),
       },
       {
-        href: `/${locale}/savoir-faire`,
-        label: dict.nav.savoirFaire,
-        img: getCategoryFirstPhoto(categories[1]),
-      },
-      {
         href: `/${locale}/atelier`,
         label: dict.nav.atelier,
-        img: getCategoryFirstPhoto(categories[2]),
+        img: getCategoryFirstPhoto(categories[1]),
       },
       {
         href: `/${locale}/contact`,

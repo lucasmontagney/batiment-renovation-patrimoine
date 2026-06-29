@@ -1,47 +1,49 @@
 {
-  "calades": [
+  "hero": [
+    "escalier.jpeg"
+  ],
+  "projets/calades": [
     "IMG-20201118-WA0009.jpg",
     "IMG-20201118-WA0018.jpg",
-    "IMG-20201118-WA0033.jpg",
-    "IMG_6433.jpg",
-    "WhatsApp Image 2026-06-25 at 17.57.31 (5).jpeg"
+    "IMG_6433.jpg"
   ],
-  "construction": [
+  "projets/construction": [
     "IMG-20211015-WA0009.jpg",
-    "WhatsApp Image 2026-06-25 at 16.42.58 (1).jpeg",
-    "WhatsApp Image 2026-06-25 at 17.36.26 (1).jpeg",
     "WhatsApp Image 2026-06-25 at 17.40.09.jpeg"
   ],
-  "enduits-chaux": [
-    "WhatsApp Image 2026-06-25 at 16.45.53.jpeg",
+  "projets/construction/avant après": [
+    "WhatsApp Image 2026-06-25 at 16.42.58 (1).jpeg",
+    "WhatsApp Image 2026-06-25 at 17.36.26 (1).jpeg"
+  ],
+  "projets/enduits-chaux": [
+    "WhatsApp Image 2026-06-25 at 16.45.53.jpeg"
+  ],
+  "projets/enduits-chaux/avant après": [
     "WhatsApp Image 2026-06-25 at 17.42.09.jpeg",
     "WhatsApp Image 2026-06-25 at 17.50.16.jpeg"
   ],
-  "escalier": [
-    "IMG_20200525_082210.jpg",
-    "IMG_6416.jpg",
+  "projets/escalier": [
     "WhatsApp Image 2026-06-25 at 17.33.41.jpeg",
-    "WhatsApp Image 2026-06-25 at 17.57.23.jpeg",
-    "WhatsApp Image 2026-06-25 at 17.57.31 (1).jpeg",
     "WhatsApp Image 2026-06-25 at 17.57.31 (2).jpeg",
     "WhatsApp Image 2026-06-25 at 17.57.31.jpeg"
   ],
-  "salles-de-bain": [
+  "projets/escalier/avant après": [
+    "IMG_20200525_082210.jpg",
+    "IMG_6416.jpg"
+  ],
+  "projets/salles-de-bain": [
     "-1019104130653345361.jpg",
     "-116185890689498279.jpg",
     "5395699012085002284.jpg",
-    "IMG_20211116_105203.jpg",
-    "IMG_20211116_105207.jpg",
     "unnamed.jpg"
   ],
-  "terrasses": [
+  "projets/terrasses": [
     "5482051157561966893.jpg",
     "IMG-20211109-WA0001.jpg",
     "IMG_20190625_174956.jpg",
     "IMG_20190625_175013.jpg",
     "IMG_20191218_112813.jpg",
     "IMG_20191219_153225.jpg",
-    "IMG_6421.jpg",
     "IMG_6425.jpg",
     "IMG_6428.jpg",
     "IMG_6429.jpg",
@@ -52,7 +54,7 @@
     "WhatsApp Image 2026-06-25 at 17.57.30 (2).jpeg",
     "WhatsApp Image 2026-06-25 at 17.57.30.jpeg"
   ],
-  "toits": [
+  "projets/toits": [
     "WhatsApp Image 2026-06-25 at 16.48.23.jpeg"
   ]
 }

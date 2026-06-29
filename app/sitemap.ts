@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { locales } from '@/lib/i18n'
 
 const BASE_URL = 'https://batiment-renovation-patrimoine.fr'
-const routes = ['', '/realisations', '/savoir-faire', '/atelier', '/contact']
+const routes = ['', '/realisations', '/atelier', '/contact']
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
