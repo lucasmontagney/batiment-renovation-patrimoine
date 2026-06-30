@@ -36,7 +36,7 @@ export default function ParallaxHero({ src, alt, children }: Props) {
         />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-olive-deep/5 via-olive-deep/20 to-olive-deep/75" />
-      <div className="relative container-main pb-20 md:pb-28 lg:pb-36">{children}</div>
+      <div className="relative container-main pb-10 md:pb-14 lg:pb-16">{children}</div>
     </section>
   )
 }

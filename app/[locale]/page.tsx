@@ -31,8 +31,8 @@ export default function HomePage({ params }: Params) {
     <>
       <LocalBusinessJsonLd />
       <ParallaxHero src={HERO_IMAGE} alt="Escalier en pierre — Bâtiment Rénovation Patrimoine">
-        <p className="eyebrow text-bone/55 mb-7">{t.eyebrow}</p>
-        <h1 className="font-display text-display-xl text-bone font-light leading-none mb-10">
+        <p className="eyebrow text-bone/55 mb-4">{t.eyebrow}</p>
+        <h1 className="font-display text-display-xl text-bone font-light leading-[0.9] mb-7">
           {t.title.map((line, i) => (
             <span key={i} className="block">
               {line}
