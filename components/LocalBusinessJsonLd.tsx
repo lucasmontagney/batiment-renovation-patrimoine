@@ -9,6 +9,7 @@ const businessSchema = {
   url: 'https://batiment-renovation-patrimoine.com',
   telephone: '+33698037960',
   email: 'd.montagney@gmail.com',
+  priceRange: '€€€',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '6 rue de Peyne',
