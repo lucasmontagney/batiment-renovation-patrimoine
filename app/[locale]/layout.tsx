@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { locales, isLocale, getDict, type Locale } from '@/lib/i18n'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import LangSetter from '@/components/LangSetter'
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -17,15 +18,11 @@ export async function generateMetadata({
   const dict = getDict(loc)
   const altLoc = loc === 'fr' ? 'en' : 'fr'
   return {
-    title: dict.brand.name,
-    description: dict.brand.tagline,
-    alternates: {
-      canonical: `/${loc}`,
-      languages: {
-        fr: '/fr',
-        en: '/en',
-      },
+    title: {
+      template: `%s · ${dict.brand.name}`,
+      default: dict.brand.name,
     },
+    description: dict.brand.tagline,
     openGraph: {
       type: 'website',
       siteName: dict.brand.name,
@@ -48,6 +45,7 @@ export default function LocaleLayout({
 
   return (
     <>
+      <LangSetter />
       <Navigation locale={locale} dict={dict} />
       <main>{children}</main>
       <Footer locale={locale} dict={dict} />

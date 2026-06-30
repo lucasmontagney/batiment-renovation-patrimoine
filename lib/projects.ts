@@ -125,3 +125,5 @@ export const FEATURED_HOME_PROJECT = {
   altFr: 'Façade restaurée à l\'enduit chaux',
   altEn: 'Lime render restored façade',
 }
+
+export const OG_IMAGE = firstFromFolder('og', HERO_IMAGE)

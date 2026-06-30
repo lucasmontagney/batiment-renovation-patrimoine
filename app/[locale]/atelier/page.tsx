@@ -1,8 +1,22 @@
+import type { Metadata } from 'next'
 import FadeIn from '@/components/FadeIn'
 import PageHero from '@/components/PageHero'
 import { getDict, isLocale, type Locale } from '@/lib/i18n'
 
 type Params = { params: { locale: string } }
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const locale = (isLocale(params.locale) ? params.locale : 'fr') as Locale
+  const dict = getDict(locale)
+  return {
+    title: dict.seo.atelier.title,
+    description: dict.seo.atelier.description,
+    alternates: {
+      canonical: `/${locale}/atelier`,
+      languages: { fr: '/fr/atelier', en: '/en/atelier' },
+    },
+  }
+}
 
 export default function AtelierPage({ params }: Params) {
   const locale = (isLocale(params.locale) ? params.locale : 'fr') as Locale

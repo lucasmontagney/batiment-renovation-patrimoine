@@ -1,9 +1,23 @@
+import type { Metadata } from 'next'
 import FadeIn from '@/components/FadeIn'
 import PageHero from '@/components/PageHero'
 import ContactForm from './ContactForm'
 import { getDict, isLocale, type Locale } from '@/lib/i18n'
 
 type Params = { params: { locale: string } }
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const locale = (isLocale(params.locale) ? params.locale : 'fr') as Locale
+  const dict = getDict(locale)
+  return {
+    title: dict.seo.contact.title,
+    description: dict.seo.contact.description,
+    alternates: {
+      canonical: `/${locale}/contact`,
+      languages: { fr: '/fr/contact', en: '/en/contact' },
+    },
+  }
+}
 
 export default function ContactPage({ params }: Params) {
   const locale = (isLocale(params.locale) ? params.locale : 'fr') as Locale

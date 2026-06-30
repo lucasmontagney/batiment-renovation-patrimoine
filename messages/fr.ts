@@ -166,4 +166,26 @@ export const fr = {
     rightsPrefix: '©',
     rightsSuffix: 'Bâtiment Rénovation Patrimoine — Tous droits réservés',
   },
+  seo: {
+    home: {
+      title: 'Maçonnerie d\'art & rénovation patrimoniale à Pézenas',
+      description:
+        'Atelier de maçonnerie traditionnelle à Pézenas (Hérault). Restauration de bâti ancien, enduits chaux, calades, escaliers, terrasses tropéziennes. David Montagney.',
+    },
+    realisations: {
+      title: 'Réalisations — Chantiers de restauration en Hérault',
+      description:
+        'Galerie de chantiers de maçonnerie patrimoniale en Hérault : enduits à la chaux, calades de galets, escaliers en pierre, terrasses, sur-élévations. Avant/après.',
+    },
+    atelier: {
+      title: 'L\'Atelier — Maçonnerie patrimoniale, Pézenas',
+      description:
+        'L\'atelier Bâtiment Rénovation Patrimoine à Pézenas. David Montagney et son équipe perpétuent les gestes de la maçonnerie traditionnelle en Occitanie.',
+    },
+    contact: {
+      title: 'Contact — Parlons de votre projet',
+      description:
+        'Contactez Bâtiment Rénovation Patrimoine à Pézenas pour votre projet de rénovation patrimoniale en Hérault. Devis, conseils, étude personnalisée.',
+    },
+  },
 }

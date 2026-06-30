@@ -165,4 +165,26 @@ export const en = {
     rightsPrefix: '©',
     rightsSuffix: 'Bâtiment Rénovation Patrimoine — All rights reserved',
   },
+  seo: {
+    home: {
+      title: 'Heritage masonry & restoration in Pézenas, France',
+      description:
+        'Traditional masonry workshop in Pézenas (Hérault, France). Old-building restoration, lime renders, pebble pavings, stone staircases, Tropezian terraces.',
+    },
+    realisations: {
+      title: 'Projects — Restoration work in Hérault',
+      description:
+        'Gallery of heritage masonry projects in Hérault: lime renders, pebble pavings, stone staircases, terraces, additions. Before/after comparisons.',
+    },
+    atelier: {
+      title: 'Workshop — Heritage masonry, Pézenas',
+      description:
+        'Bâtiment Rénovation Patrimoine workshop in Pézenas. David Montagney and his team carry on the gestures of traditional masonry in Occitania.',
+    },
+    contact: {
+      title: 'Contact — Tell us about your project',
+      description:
+        'Get in touch with Bâtiment Rénovation Patrimoine in Pézenas for your heritage restoration project in Hérault. Quotes, advice, bespoke study.',
+    },
+  },
 }

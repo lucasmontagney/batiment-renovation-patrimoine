@@ -1,11 +1,26 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import FadeIn from '@/components/FadeIn'
 import ParallaxHero from '@/components/ParallaxHero'
+import LocalBusinessJsonLd from '@/components/LocalBusinessJsonLd'
 import { getDict, isLocale, type Locale } from '@/lib/i18n'
 import { HERO_IMAGE, FEATURED_HOME_PROJECT } from '@/lib/projects'
 
 type Params = { params: { locale: string } }
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const locale = (isLocale(params.locale) ? params.locale : 'fr') as Locale
+  const dict = getDict(locale)
+  return {
+    title: dict.seo.home.title,
+    description: dict.seo.home.description,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: { fr: '/fr', en: '/en' },
+    },
+  }
+}
 
 export default function HomePage({ params }: Params) {
   const locale = (isLocale(params.locale) ? params.locale : 'fr') as Locale
@@ -14,6 +29,7 @@ export default function HomePage({ params }: Params) {
 
   return (
     <>
+      <LocalBusinessJsonLd />
       <ParallaxHero src={HERO_IMAGE} alt="Escalier en pierre — Bâtiment Rénovation Patrimoine">
         <p className="eyebrow text-bone/55 mb-7">{t.eyebrow}</p>
         <h1 className="font-display text-display-xl text-bone font-light leading-none mb-10">

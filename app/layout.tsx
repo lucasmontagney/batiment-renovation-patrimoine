@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
+import { OG_IMAGE } from '@/lib/projects'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -42,6 +43,21 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Bâtiment Rénovation Patrimoine',
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: 'Bâtiment Rénovation Patrimoine — Maçonnerie d\'art, Pézenas',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bâtiment Rénovation Patrimoine — Maçonnerie d\'art, Pézenas',
+    description:
+      'Maçonnerie traditionnelle et rénovation patrimoniale haut de gamme à Pézenas, dans l\'Hérault.',
+    images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },
 }

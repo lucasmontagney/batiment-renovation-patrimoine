@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import FadeIn from '@/components/FadeIn'
@@ -7,6 +8,19 @@ import { getDict, isLocale, type Locale } from '@/lib/i18n'
 import { categories, getCategoryPhotoSrc } from '@/lib/projects'
 
 type Params = { params: { locale: string } }
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const locale = (isLocale(params.locale) ? params.locale : 'fr') as Locale
+  const dict = getDict(locale)
+  return {
+    title: dict.seo.realisations.title,
+    description: dict.seo.realisations.description,
+    alternates: {
+      canonical: `/${locale}/realisations`,
+      languages: { fr: '/fr/realisations', en: '/en/realisations' },
+    },
+  }
+}
 
 export default function RealisationsPage({ params }: Params) {
   const locale = (isLocale(params.locale) ? params.locale : 'fr') as Locale
