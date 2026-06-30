@@ -5,7 +5,7 @@ import FadeIn from '@/components/FadeIn'
 import PageHero from '@/components/PageHero'
 import CompareSlider from '@/components/CompareSlider'
 import { getDict, isLocale, type Locale } from '@/lib/i18n'
-import { categories, getCategoryPhotoSrc } from '@/lib/projects'
+import { categories, getCategoryPhotoSrc, getCategoryPhotoAlt } from '@/lib/projects'
 
 type Params = { params: { locale: string } }
 
@@ -33,7 +33,7 @@ export default function RealisationsPage({ params }: Params) {
         eyebrow={t.eyebrow}
         title={t.title}
         subtitle={t.subtitle}
-        imageSrc="/images/projets/terrasses/5482051157561966893.jpg"
+        imageSrc="/images/projets/terrasses/terrasse-piscine-pierre-01.jpg"
         imageAlt={t.title}
       />
 
@@ -53,9 +53,9 @@ export default function RealisationsPage({ params }: Params) {
       </section>
 
       {categories.map((cat, catIdx) => {
-        const photos = cat.photos.map((f) => ({
+        const photos = cat.photos.map((f, i) => ({
           src: getCategoryPhotoSrc(cat, f),
-          alt: cat.name[locale],
+          alt: getCategoryPhotoAlt(cat, i, locale),
         }))
 
         // Alternate: even-indexed categories show the before/after slider FIRST,

@@ -121,9 +121,21 @@ function firstFromFolder(folderKey: string, fallback: string): string {
 export const HERO_IMAGE = firstFromFolder('home/hero', firstFromFolder('hero', '/images/hero/escalier.jpeg'))
 
 export const FEATURED_HOME_PROJECT = {
-  src: firstFromFolder('home/featured', `${IMG_BASE}/projets/enduits-chaux/WhatsApp Image 2026-06-25 at 16.45.53.jpeg`),
-  altFr: 'Façade restaurée à l\'enduit chaux',
-  altEn: 'Lime render restored façade',
+  src: firstFromFolder('home/featured', `${IMG_BASE}/projets/enduits-chaux/enduit-chaux-facade-01.jpg`),
+  altFr: 'Façade restaurée à l\'enduit chaux — Bâtiment Rénovation Patrimoine, Pézenas',
+  altEn: 'Lime render restored façade — Bâtiment Rénovation Patrimoine, Pézenas',
+}
+
+export function getCategoryPhotoAlt(
+  category: Category,
+  index: number,
+  locale: Locale,
+): string {
+  const n = index + 1
+  if (locale === 'fr') {
+    return `${category.name.fr} — vue ${n} — Bâtiment Rénovation Patrimoine, Pézenas, Hérault`
+  }
+  return `${category.name.en} — view ${n} — Bâtiment Rénovation Patrimoine, Pézenas, France`
 }
 
 export const OG_IMAGE = firstFromFolder('og', HERO_IMAGE)

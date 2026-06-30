@@ -29,7 +29,7 @@ export default function AtelierPage({ params }: Params) {
         eyebrow={t.eyebrow}
         title={t.title}
         subtitle={t.subtitle}
-        imageSrc="/images/projets/escalier/WhatsApp Image 2026-06-25 at 17.33.41.jpeg"
+        imageSrc="/images/projets/escalier/escalier-pierre-01.jpg"
         imageAlt={t.title}
       />
 
