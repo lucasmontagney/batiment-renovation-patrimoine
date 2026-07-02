@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { Dictionary, Locale } from '@/lib/i18n'
 import { altLocale } from '@/lib/i18n'
 import { HERO_IMAGE, getCategoryFirstPhoto, categories } from '@/lib/projects'
+import Logo from '@/components/Logo'
 
 type Props = {
   locale: Locale
@@ -81,15 +82,10 @@ export default function Navigation({ locale, dict }: Props) {
         <div className="container-wide flex items-center justify-between h-[76px]">
           <Link
             href={`/${locale}`}
-            className={`font-display leading-tight transition-colors duration-300 ${
-              transparent || open ? 'text-bone' : 'text-ink'
-            }`}
+            className="transition-opacity duration-300 hover:opacity-80"
             aria-label={dict.brand.name}
           >
-            <span className="block text-[12px] font-light tracking-[0.18em] uppercase">Bâtiment</span>
-            <span className="block text-[15px] md:text-[17px] font-normal tracking-wide">
-              Rénovation Patrimoine
-            </span>
+            <Logo variant={transparent || open ? 'light' : 'dark'} />
           </Link>
 
           <div className="flex items-center gap-6 md:gap-8">

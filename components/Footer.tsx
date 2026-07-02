@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Dictionary, Locale } from '@/lib/i18n'
+import Logo from '@/components/Logo'
 
 type Props = {
   locale: Locale
@@ -18,13 +19,8 @@ export default function Footer({ locale, dict }: Props) {
       <div className="container-main py-20 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           <div className="md:col-span-5">
-            <Link href={`/${locale}`} className="block mb-6">
-              <span className="block font-display text-[12px] font-light tracking-[0.18em] uppercase text-bone/50">
-                Bâtiment
-              </span>
-              <span className="block font-display text-3xl text-bone font-light leading-tight">
-                Rénovation Patrimoine
-              </span>
+            <Link href={`/${locale}`} className="inline-block mb-8 transition-opacity duration-300 hover:opacity-80">
+              <Logo variant="light" layout="stacked" />
             </Link>
             <p className="font-sans text-[13px] leading-relaxed text-bone/45 max-w-xs">
               {dict.brand.tagline}
