@@ -118,10 +118,10 @@ function firstFromFolder(folderKey: string, fallback: string): string {
   return `${IMG_BASE}/${folderKey}/${files[0]}`
 }
 
-export const HERO_IMAGE = firstFromFolder('home/hero', firstFromFolder('hero', '/images/hero/escalier.jpeg'))
+export const HERO_IMAGE = firstFromFolder('home/hero', firstFromFolder('hero', '/images/hero/escalier.webp'))
 
 export const FEATURED_HOME_PROJECT = {
-  src: firstFromFolder('home/featured', `${IMG_BASE}/projets/enduits-chaux/enduit-chaux-facade-01.jpg`),
+  src: firstFromFolder('home/featured', `${IMG_BASE}/projets/enduits-chaux/enduit-chaux-facade-01.webp`),
   altFr: 'Façade restaurée à l\'enduit chaux — Bâtiment Rénovation Patrimoine, Pézenas',
   altEn: 'Lime render restored façade — Bâtiment Rénovation Patrimoine, Pézenas',
 }

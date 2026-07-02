@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "optimize-images": "node scripts/optimize-images.js",
     "sync-photos": "node scripts/build-photos-manifest.js",
     "predev": "node scripts/build-photos-manifest.js",
     "prebuild": "node scripts/build-photos-manifest.js",
@@ -27,6 +28,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "postcss": "^8",
+    "sharp": "^0.35.3",
     "tailwindcss": "^3.4",
     "typescript": "^5"
   }

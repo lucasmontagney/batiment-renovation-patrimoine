@@ -33,7 +33,7 @@ export default function RealisationsPage({ params }: Params) {
         eyebrow={t.eyebrow}
         title={t.title}
         subtitle={t.subtitle}
-        imageSrc="/images/projets/terrasses/terrasse-piscine-pierre-01.jpg"
+        imageSrc="/images/projets/terrasses/terrasse-piscine-pierre-01.webp"
         imageAlt={t.title}
       />
 

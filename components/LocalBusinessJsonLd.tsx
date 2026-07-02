@@ -5,7 +5,7 @@ const businessSchema = {
   name: 'Bâtiment Rénovation Patrimoine',
   description:
     "Maçonnerie traditionnelle et rénovation patrimoniale haut de gamme à Pézenas, dans l'Hérault.",
-  image: 'https://batiment-renovation-patrimoine.com/images/hero/escalier.jpeg',
+  image: 'https://batiment-renovation-patrimoine.com/images/hero/escalier.webp',
   url: 'https://batiment-renovation-patrimoine.com',
   telephone: '+33698037960',
   email: 'd.montagney@gmail.com',

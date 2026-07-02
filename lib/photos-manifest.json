@@ -1,60 +1,60 @@
 {
   "hero": [
-    "escalier.jpg"
+    "escalier.webp"
   ],
   "projets/calades": [
-    "calade-galets-01.jpg",
-    "calade-galets-02.jpg",
-    "calade-galets-03.jpg"
+    "calade-galets-01.webp",
+    "calade-galets-02.webp",
+    "calade-galets-03.webp"
   ],
   "projets/construction": [
     "construction-pierre-01.jpg",
-    "construction-pierre-02.jpg"
+    "construction-pierre-02.webp"
   ],
   "projets/construction/avant après": [
-    "apres.jpg",
-    "avant.jpg"
+    "apres.webp",
+    "avant.webp"
   ],
   "projets/enduits-chaux": [
-    "enduit-chaux-facade-01.jpg"
+    "enduit-chaux-facade-01.webp"
   ],
   "projets/enduits-chaux/avant après": [
-    "apres.jpg",
-    "avant.jpg"
+    "apres.webp",
+    "avant.webp"
   ],
   "projets/escalier": [
-    "escalier-pierre-01.jpg",
-    "escalier-pierre-02.jpeg",
-    "escalier-pierre-03.jpg"
+    "escalier-pierre-01.webp",
+    "escalier-pierre-02.webp",
+    "escalier-pierre-03.webp"
   ],
   "projets/escalier/avant après": [
-    "apres.jpg",
-    "avant.jpg"
+    "apres.webp",
+    "avant.webp"
   ],
   "projets/salles-de-bain": [
-    "salle-de-bain-pierre-01.jpg",
-    "salle-de-bain-pierre-02.jpg",
-    "salle-de-bain-pierre-03.jpg",
-    "salle-de-bain-pierre-04.jpg"
+    "salle-de-bain-pierre-01.webp",
+    "salle-de-bain-pierre-02.webp",
+    "salle-de-bain-pierre-03.webp",
+    "salle-de-bain-pierre-04.webp"
   ],
   "projets/terrasses": [
-    "terrasse-piscine-pierre-01.jpg",
-    "terrasse-piscine-pierre-02.jpg",
-    "terrasse-piscine-pierre-03.jpg",
-    "terrasse-piscine-pierre-04.jpg",
-    "terrasse-piscine-pierre-05.jpg",
-    "terrasse-piscine-pierre-06.jpg",
-    "terrasse-piscine-pierre-07.jpg",
-    "terrasse-piscine-pierre-08.jpg",
-    "terrasse-piscine-pierre-09.jpg",
-    "terrasse-piscine-pierre-10.jpg",
-    "terrasse-piscine-pierre-11.jpg",
-    "terrasse-piscine-pierre-12.jpg",
-    "terrasse-piscine-pierre-13.jpg",
-    "terrasse-piscine-pierre-14.jpg",
-    "terrasse-piscine-pierre-15.jpg"
+    "terrasse-piscine-pierre-01.webp",
+    "terrasse-piscine-pierre-02.webp",
+    "terrasse-piscine-pierre-03.webp",
+    "terrasse-piscine-pierre-04.webp",
+    "terrasse-piscine-pierre-05.webp",
+    "terrasse-piscine-pierre-06.webp",
+    "terrasse-piscine-pierre-07.webp",
+    "terrasse-piscine-pierre-08.webp",
+    "terrasse-piscine-pierre-09.webp",
+    "terrasse-piscine-pierre-10.webp",
+    "terrasse-piscine-pierre-11.webp",
+    "terrasse-piscine-pierre-12.webp",
+    "terrasse-piscine-pierre-13.webp",
+    "terrasse-piscine-pierre-14.webp",
+    "terrasse-piscine-pierre-15.webp"
   ],
   "projets/toits": [
-    "toiture-traditionnelle-01.jpg"
+    "toiture-traditionnelle-01.webp"
   ]
 }
