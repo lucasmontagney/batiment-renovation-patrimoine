@@ -2,8 +2,18 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export const runtime = 'nodejs'
 
-const TO_EMAIL = 'd.montagney@gmail.com'
+const DEFAULT_TO_EMAILS = ['d.montagney@gmail.com']
 const MAX_FILE_BYTES = 10 * 1024 * 1024 // 10 MB
+
+function getToEmails(): string[] {
+  const raw = process.env.CONTACT_TO_EMAILS
+  if (!raw) return DEFAULT_TO_EMAILS
+  const parsed = raw
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+  return parsed.length > 0 ? parsed : DEFAULT_TO_EMAILS
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -66,7 +76,7 @@ export async function POST(req: NextRequest) {
         },
         body: JSON.stringify({
           from: fromEmail,
-          to: TO_EMAIL,
+          to: getToEmails(),
           reply_to: email,
           subject,
           text: textBody,
